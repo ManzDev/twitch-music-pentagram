@@ -44,11 +44,11 @@ class PentagramNote extends HTMLElement {
       }
 
       :host([instrument="piano"]) {
-        background-image: url(/assets/avocado.svg);
+        background-image: url("assets/avocado.svg");
         border: 1px solid transparent;
       }
       :host([instrument="acousticguitar"]) {
-        background-image: url(/assets/spherical-cow.svg);
+        background-image: url("assets/spherical-cow.svg");
         border: 1px solid transparent;
       }
     `;
