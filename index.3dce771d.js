@@ -22,11 +22,11 @@ const g=function(){const e=document.createElement("link").relList;if(e&&e.suppor
       }
 
       :host([instrument="piano"]) {
-        background-image: url(/assets/avocado.svg);
+        background-image: url("assets/avocado.svg");
         border: 1px solid transparent;
       }
       :host([instrument="acousticguitar"]) {
-        background-image: url(/assets/spherical-cow.svg);
+        background-image: url("assets/spherical-cow.svg");
         border: 1px solid transparent;
       }
     `}get instrument(){return this.getAttribute("instrument")||"piano"}connectedCallback(){this.note=this.getAttribute("note")||"C5",this.render(),this.addEventListener("click",()=>this.select()),this.addEventListener("contextmenu",e=>this.unselect(e))}select(){const e=new CustomEvent("ASSIGN_INSTRUMENT",{detail:{note:this},composed:!0});this.dispatchEvent(e),this.play()}unselect(e){e.preventDefault(),this.removeAttribute("instrument")}play(){l[this.instrument][this.note].currentTime=0,l[this.instrument][this.note].play()}render(){this.shadowRoot.innerHTML=`
